@@ -1,0 +1,123 @@
+body {
+    background-color: floralwhite;
+    font-family: Arial, sans-serif;
+}
+.top{
+    list-style-type: none;
+    overflow: hidden
+}
+
+.header__logo {
+    float: left;
+    width: 8%;
+    height: 8%
+}
+
+.header__title {
+    float: right;
+    font-size: 400%;
+    font-family:cursive;
+    position: absolute;
+    right: 30px;
+    top: -30px
+}
+
+.menu {
+    background-color: #f39668;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.menu__item {
+    float: left;
+}
+
+.menu__link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+.main {
+    margin: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+.main__article__name{
+    text-align: center
+}
+
+
+.main__section img {
+    border: 2px solid #f39668;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: auto;
+}
+
+.main__text {
+    text-align: justify;
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.quote{
+    text-align: center
+}
+
+
+.footer {
+    background-color: #f39668;
+    color: white;
+    position: relative;
+}
+
+/* Тени */
+.shadow-drop {
+    box-shadow: 0px 4px 8px rgb(255, 0, 0);
+}
+
+/* Пример использования заглавных букв */
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Стилизация ссылок */
+a {
+    text-decoration: underline;
+    color: #0066cc;
+}
+
+a:hover {
+    color: #004999;
+}
+
+/* Дополнительные отступы и границы */
+.margin-20 {
+    margin: 20px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.border-rounded {
+    border-radius: 10px;
+}
+
+/* Глобальные настройки текста */
+.text-bold {
+    font-weight: bold;
+}
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
