@@ -143,42 +143,16 @@ body {
     font-size: 2em;
     margin-bottom: 20px;
 }
-/* Таблица на всю ширину */
 .services-table {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr; /* Три колонки: услуга, стоимость, описание */
+    grid-template-columns: 1fr 1fr 2fr;
     width: 100%;
     margin: 0 auto;
     gap: 1px;
-    background-color: #403410; /* Цвет границы для всей таблицы */
+    background-color: #403410;
     border-collapse: collapse;
 }
 
-/* Стили для заголовков таблицы */
-.services-table thead {
-    display: contents; /* Для интеграции заголовков в сетку */
-}
-
-/* Заголовки таблицы */
-.services-table th {
-    background-color: #A68524;
-    color: white;
-    padding: 15px;
-    text-align: center; /* Центрируем заголовки */
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-/* Ячейки таблицы */
-.services-table td {
-    background-color: #ffffff;
-    padding: 15px;
-    text-align: center; /* Центрируем текст в ячейках */
-    border-bottom: 1px solid #ccc;
-    transition: background-color 0.3s ease;
-}
-
-/* Зебра-стиль для четных строк */
 .services-table tr:nth-child(even) td {
     background-color: #f0e5c9;
 }
@@ -186,5 +160,22 @@ body {
     background-color: #fff8e1;
 }
 
-/* Медиа-запросы для адаптивности */
+thead, tbody, tr {
+    display: contents;
+}
 
+.services-table th {
+    background-color: #A68524;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.services-table td {
+    background-color: #fff8e1;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
