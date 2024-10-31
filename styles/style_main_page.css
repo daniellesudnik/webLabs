@@ -1,8 +1,13 @@
 body {
     background: rgb(242,237,228);
     background: linear-gradient(135deg, rgba(242,237,228,1) 52%, rgb(213, 177, 149) 95%);
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
 }
+
 .top{
     list-style-type: none;
     overflow: hidden;
@@ -11,28 +16,33 @@ body {
     border-bottom: 1px solid #403410;
 }
 
-
 .header__logo {
     float: left;
-    width: 8%;
-    height: 8%
+    width: 90px;
+    height: auto
 }
 
 .header__title {
     float: right;
     font-size: 450%;
-    font-family:cursive;
     position: absolute;
     right: 30px;
-    top: -30px;
     color : #553a03;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: -30px;
+    padding-top: 30px;
+    margin-right: 10px;
 }
-
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .menu {
     background-color: #A68524;
     list-style-type: none;
     overflow: hidden;
+
 }
 
 .menu__item {
@@ -49,11 +59,11 @@ body {
     text-transform: uppercase;
 }
 
-
 .ad {
     text-align: center;
     margin: 20px 0;
 }
+
 
 .ad-image {
     display: block;
@@ -62,11 +72,11 @@ body {
     height: 100px;
 }
 
-
 .main {
-    margin: 20px;
+    margin-top: 20px;
     font-size: 1.1em;
     line-height: 1.6;
+    padding: 10px;
 }
 .img-left {
     float: left;
@@ -82,9 +92,10 @@ body {
     height: auto;
 }
 .main__section {
+    justify-content: space-between;
     margin-bottom: 40px;
-    padding: 20px;
     border-bottom: 1px solid #403410; /* Декоративная линия */
+    padding-bottom: 20px;
 }
 
 .main__article__name{
@@ -96,21 +107,31 @@ body {
     margin-top: -17px;
 }
 
-
 .main__section img {
     border: 2px solid #403410;
     box-shadow: 4px 4px 8px #A68F86;
     width: 300px;
     height: auto;
+    border-radius:15px;
+}
+
+@media screen and (max-width: 768px) {
+    .main__section img {
+        display: none;
+    }
 }
 
 .main__text {
+    flex: 1;
     text-align: justify;
-    font-family: 'Georgia', serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     color : #403410;
     margin-bottom: 20px;
     font-size: 0.9em;
     line-height: 1.7;
+    text-indent: 20px;
 }
 
 .quote{
@@ -160,4 +181,15 @@ body {
 }
 .contacts_icon {
     margin-right: 30px;
+}
+/* Основные стили наведения и активации для меню */
+.menu__link:hover {
+    background-color: #f2a365; /* Цвет при наведении */
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    font-weight: bold; /* Выделяем активный пункт */
+    color: #553a03; /* Цвет активного пункта */
+    border-bottom: 2px solid #553a03; /* Подчеркнутый нижний бордюр */
 }

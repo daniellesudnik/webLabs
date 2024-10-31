@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style_main_page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="Js/main.js" defer></script>
     <title>Лапочка</title>
     <style>
     </style>
@@ -12,11 +16,11 @@
     <li><img class="header__logo" src="../webLabs/photos/logo.png" alt="Логотип магазина"></li>
     <li ><h1 class="header__title">Лапочка</h1></li>
 </ul>
-<header>
+<header class="header">
     <nav>
         <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="#pet">Животные</a></li>
-            <li class="menu__item"><a class="menu__link" href="#services">Услуги</a></li>
+            <li class="menu__item"><a class="menu__link" href="Animals.html">Животные</a></li>
+            <li class="menu__item"><a class="menu__link" href="Services.html">Услуги</a></li>
             <li class="menu__item"><a class="menu__link" href="pet_shop_main.html">О нас</a></li>
             <li class="menu__item"><a class="menu__link" href="contacts.html">Контакты</a></li>
         </ul>
@@ -33,14 +37,14 @@
         <p>Магазин <strong>животных "Лапочка"</strong> предоставляет широкий ассортимент товаров и услуг для ваших любимых питомцев. Мы гордимся тем, что предлагаем только качественные товары, которые были проверены временем и нашими клиентами. В магазине можно найти продукцию как для домашних, так и для экзотических животных.</p>
         <p>Наша цель — обеспечить каждому питомцу заботу, здоровье и радость. Мы активно сотрудничаем с ведущими производителями товаров для животных, чтобы предлагать вам лучшее на рынке. В нашем магазине вы найдете:</p>
         <article id="offers">
-            <br>
-            <ul>
+
+            <ol>
                 <li>Корма для собак, кошек, птиц и грызунов</li>
                 <li>Игрушки для активных игр и обучения</li>
                 <li>Средства для ухода за шерстью и гигиеной</li>
                 <li>Клетки, аквариумы и террариумы для экзотических животных</li>
                 <li>Специализированную продукцию для здоровья и ухода за питомцами</li>
-            </ul>
+            </ol>
         </article>
         <img class="img-right" src="../webLabs/photos/pet-shop-interior-design.jpg" alt="Картинка магазина">
         <article id="more about us">
@@ -68,11 +72,7 @@
 </main>
 <footer class="footer">
     <p class="footer__copyright">© 2024 Магазин "Лапочка". Все права защищены.</p>
-    <pre class="footer__cat">
-       /\_/\
-      ( o.o )
-       > ^ <
-    </pre>
+    <p id="performance-display"></p>
 </footer>
 </body>
 </html>
