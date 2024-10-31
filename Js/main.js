@@ -1,15 +1,12 @@
 (function() {
-    const startTime = performance.now();
 
-    window.addEventListener('load', function() {
-        const loadTime = (performance.now() - startTime) / 1000;
-        const footer = document.querySelector('footer');
-        if (footer) {
-            const loadInfo = document.createElement('p');
-            loadInfo.textContent = `Время загрузки страницы: ${loadTime.toFixed(2)} сек.`;
-            footer.appendChild(loadInfo);
+    window.onload = function() {
+        const loadTime = (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart) / 1000;
+        const performanceDisplay = document.getElementById("performance-display");
+        if (performanceDisplay) {
+            performanceDisplay.innerText = `Время загрузки страницы: ${loadTime.toFixed(2)} сек.`;
         }
-    });
+    };
 
     document.addEventListener('DOMContentLoaded', function() {
         const menuLinks = document.querySelectorAll('.menu__link');
@@ -21,3 +18,4 @@
         });
     });
 })();
+
