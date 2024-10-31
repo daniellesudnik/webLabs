@@ -25,13 +25,13 @@ body {
 .header__title {
     float: right;
     font-size: 450%;
-    font-family:cursive;
     position: absolute;
     right: 30px;
     color : #553a03;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: -30px;
+    margin-top: -30px;
     padding-top: 30px;
+    margin-right: 10px;
 }
 .header{
     position: sticky;
@@ -42,7 +42,7 @@ body {
     background-color: #A68524;
     list-style-type: none;
     overflow: hidden;
-    width: 100%;
+
 }
 
 .menu__item {
@@ -181,4 +181,15 @@ body {
 }
 .contacts_icon {
     margin-right: 30px;
+}
+/* Основные стили наведения и активации для меню */
+.menu__link:hover {
+    background-color: #f2a365; /* Цвет при наведении */
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    font-weight: bold; /* Выделяем активный пункт */
+    color: #553a03; /* Цвет активного пункта */
+    border-bottom: 2px solid #553a03; /* Подчеркнутый нижний бордюр */
 }

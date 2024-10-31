@@ -26,6 +26,12 @@ body {
     width: 30%;
     height: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .horizontal-images img {
+        display: none;
+    }
+}
 .header__logo {
     float: left;
     width: 90px;
@@ -40,8 +46,9 @@ body {
     right: 30px;
     color : #553a03;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: -30px;
+    margin-top: -30px;
     padding-top: 30px;
+    margin-right: 10px;
 }
 .header{
     position: sticky;
@@ -56,13 +63,22 @@ body {
     line-height: 1.2;
     margin-top: -17px;
 }
+.ad {
+    text-align: center;
+    margin: 20px 0;
+}
 
+
+.ad-image {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    height: 100px;
+}
 .menu {
     background-color: #A68524;
     list-style-type: none;
     overflow: hidden;
-    width: 100%;
-    top: 140px;
 }
 
 .menu__item {
@@ -178,4 +194,16 @@ thead, tbody, tr {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #ccc;
+}
+
+/* Основные стили наведения и активации для меню */
+.menu__link:hover {
+    background-color: #f2a365; /* Цвет при наведении */
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    font-weight: bold; /* Выделяем активный пункт */
+    color: #553a03; /* Цвет активного пункта */
+    border-bottom: 2px solid #553a03; /* Подчеркнутый нижний бордюр */
 }
