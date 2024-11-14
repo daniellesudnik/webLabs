@@ -24,7 +24,6 @@ body {
 .header__title {
     float: right;
     font-size: 450%;
-    font-family:cursive;
     position: absolute;
     right: 30px;
     color : #553a03;
