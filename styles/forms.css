@@ -129,12 +129,14 @@ body {
 }
 
 .grid-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
     border-collapse: collapse;
     background-color: #fff8e1;
 }
 
-.grid-table th {
+.grid-table .header {
     background-color: #A68524;
     color: white;
     padding: 10px;
@@ -143,21 +145,12 @@ body {
     font-size: 1.1em;
 }
 
-.grid-table td {
+.grid-table .cell {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
     font-size: 1.1em;
 }
-
-.grid-table tr:nth-child(even) {
-    background-color: #f0e5c9; /* Цвет четных строк */
-}
-
-.grid-table tr:nth-child(odd) {
-    background-color: #fff8e1; /* Цвет нечетных строк */
-}
-
 
 .delete-button {
     background-color: #d9534f;

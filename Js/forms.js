@@ -1,33 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('animalForm');
     const tableContainer = document.getElementById('animalTable');
+    const template = document.getElementById('animal-row-template'); // Получаем шаблон
     const animals = JSON.parse(localStorage.getItem('animals')) || [];
+
     const renderTable = () => {
         if (animals.length === 0) {
             tableContainer.innerHTML = '<p>Пока нет добавленных животных.</p>';
             return;
         }
-        let tableHTML = '<table class="grid-table"><thead><tr><th>Имя</th><th>Тип</th><th>Возраст</th><th>Действия</th></tr></thead><tbody>';
-        animals.forEach((animal, index) => { //перебеирает каждый обьект animal в массиве animal
-            tableHTML += `
-                <tr>
-                    <td>${animal.name}</td>
-                    <td>${animal.type}</td>
-                    <td>${animal.age}</td>
-                    <td><button class="delete-button" data-index="${index}">Удалить</button></td>
-                </tr>`;
-        });
-        tableHTML += '</tbody></table>';
-        tableContainer.innerHTML = tableHTML;
-        document.querySelectorAll('.delete-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const index = e.target.dataset.index;
+        tableContainer.querySelectorAll('.cell').forEach(cell => cell.remove());
+        animals.forEach((animal, index) => {
+            const clone = template.content.cloneNode(true);
+            clone.querySelector('.animal-name').textContent = animal.name;
+            clone.querySelector('.animal-type').textContent = animal.type;
+            clone.querySelector('.animal-age').textContent = animal.age;
+
+            const deleteButton = clone.querySelector('.delete-button');
+            
+            deleteButton.dataset.index = index;
+            deleteButton.addEventListener('click', () => {
                 animals.splice(index, 1);
                 localStorage.setItem('animals', JSON.stringify(animals));
                 renderTable();
             });
+
+            tableContainer.appendChild(clone);
         });
     };
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value.trim();
@@ -40,5 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         }
     });
+
     renderTable();
 });
