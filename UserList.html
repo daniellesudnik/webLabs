@@ -34,17 +34,28 @@
 </aside>
 <main>
   <section class="user-section">
-    <h2 class="main__article__name">Список пользователей</h2>
+    <h2>Список Животных</h2>
     <div id="preloader" class="preloader">
-      <div class="loader"></div> <!-- Анимация загрузки -->
+      <div class="loader"></div>
     </div>
-    <div id="userTable" class="grid-table">
+    <div id="animalTable" class="grid-table">
       <div class="header">Имя</div>
       <div class="header">Email</div>
       <div class="header">Телефон</div>
       <div class="header">Сайт</div>
     </div>
+
+    <template id="row-template">
+      <div class="cell name"></div>
+      <div class="cell email"></div>
+      <div class="cell phone"></div>
+      <div class="cell site"></div>
+    </template>
   </section>
+  <div id="pagination" class="pagination">
+    <button id="prevBtn" disabled>Назад</button>
+    <button id="nextBtn">Вперед</button>
+  </div>
 </main>
 </body>
 </html>

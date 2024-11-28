@@ -1,54 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userTable = document.getElementById('userTable');
-    const preloader = document.getElementById('preloader');
-    const apiUrl = 'https://jsonplaceholder.typicode.com/users'; // URL с данными фиктивными
+    const userTable = document.getElementById('animalTable');
+    const template = document.getElementById('row-template');
+    const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-    const fetchUsers = async (filter) => {
+    let users = [];
+    let currentPage = 1;
+    const itemsPerPage = 5;
+
+    const fetchUsers = async () => {
         try {
             preloader.classList.add('active');
+            await new Promise(resolve => setTimeout(resolve, 1000));
             const response = await fetch(apiUrl);
             if (!response.ok) throw new Error('Ошибка сети');
-            const users = await response.json();
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-            const filteredUsers = filter(users);
-
-            renderUsers(filteredUsers);
+            users = await response.json();
+            renderUsers();
         } catch (error) {
-            renderError(error.message);
+            console.error('Ошибка загрузки данных:', error);
         } finally {
             preloader.classList.remove('active'); // Скрываем preloader
         }
     };
-
-    const renderUsers = (users) => {
-        userTable.innerHTML = `
-            <div class="header">Имя</div>
-            <div class="header">Email</div>
-            <div class="header">Телефон</div>
-            <div class="header">Сайт</div>
-        `;
-
-        users.forEach(user => {
-            userTable.innerHTML += `
-                <div class="cell">${user.name}</div>
-                <div class="cell">${user.email}</div>
-                <div class="cell">${user.phone}</div>
-                <div class="cell"><a href="http://${user.website}" target="_blank">${user.website}</a></div>
-            `;
+    const renderUsers = () => {
+        userTable.querySelectorAll('.cell').forEach(cell => cell.remove());
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentPageUsers = users.slice(startIndex, endIndex);
+        currentPageUsers.forEach(user => {
+            const clone = template.content.cloneNode(true);
+            clone.querySelector('.name').textContent = user.name;
+            clone.querySelector('.email').textContent = user.email;
+            clone.querySelector('.phone').textContent = user.phone;
+            clone.querySelector('.site').innerHTML = `<a href="http://${user.website}" target="_blank">${user.website}</a>`;
+            userTable.appendChild(clone);
         });
+        updatePaginationButtons();
     };
-    const renderError = (message) => {
-        userTable.innerHTML = `<p style="color: red;">Ошибка ${message}</p>`;
+    const updatePaginationButtons = () => {
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(users.length / itemsPerPage);
     };
-
-    const filterUsers = (users) => {
-        const random = Math.random();
-        if (random > 0.5) {
-            return users.filter(user => user.id >= 5);
-        } else {
-            return users.filter(user => user.id <= 5);
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderUsers();
         }
-    };
-    fetchUsers(filterUsers);
+    });
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < Math.ceil(users.length / itemsPerPage)) {
+            currentPage++;
+            renderUsers();
+        }
+    });
+
+    fetchUsers();
 });
