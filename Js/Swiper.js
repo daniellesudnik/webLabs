@@ -1,4 +1,3 @@
-// Initialize Slick Carousel
 $(document).ready(function () {
     $('.carousel').slick({
         infinite: true, // Бесконечное пролистывание
