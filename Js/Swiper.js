@@ -6,7 +6,15 @@ $(document).ready(function () {
         autoplay: true, // Включение автоматического пролистывания
         autoplaySpeed: 3000, // Интервал между переключениями (в миллисекундах)
         dots: true, // Навигационные точки
-        responsive: [ // Responsive breakpoints
+        centerMode: true, // Активный слайд по центру
+        centerPadding: '0px', // Убираем лишние отступы
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
             {
                 breakpoint: 768,
                 settings: {
