@@ -6,7 +6,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js" defer></script>
   <script src="Js/main.js" defer></script>
+  <script src="Js/Swiper.js" defer></script>
   <title>Лапочка</title>
   <style>
   </style>
@@ -33,10 +38,14 @@
 </aside>
 <main class="main">
   <section class="horizontal-images">
-    <img src="photos/cat-grooming-services.jpeg" alt="Фото 1">
-    <img src="photos/dog-getting-jabs-IE-768x513.jpeg" alt="Фото 2">
-    <img src="photos/grooming-lp-by-appointment-bath-and-haircut-img-1000x667.avif" alt="Фото 3">
+    <div class="carousel">
+      <div><img src="photos/cat-grooming-services.jpeg" alt="Фото 1"></div>
+      <div><img src="photos/dog-getting-jabs-IE-768x513.jpeg" alt="Фото 2"></div>
+      <div><img src="photos/grooming-lp-by-appointment-bath-and-haircut-img-1000x667.avif" alt="Фото 3"></div>
+      <div><img src="photos/domashniygrumingkoshki.jpg" alt="Фото 4"></div>
+    </div>
   </section>
+  <br>
   <section id="services" class="services__section">
     <h2 class="services__title">Наши услуги</h2>
 
