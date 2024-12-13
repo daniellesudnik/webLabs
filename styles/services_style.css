@@ -15,17 +15,6 @@ body {
     padding: 10px;
     border-bottom: 1px solid #403410;
 }
-.horizontal-images {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.horizontal-images img {
-    margin: 20px 10px;
-    width: 30%;
-    height: auto;
-}
 
 @media screen and (max-width: 768px) {
     .horizontal-images img {
@@ -194,14 +183,32 @@ thead, tbody, tr {
     border-bottom: 1px solid #ccc;
 }
 
-/* Основные стили наведения и активации для меню */
+
 .menu__link:hover {
-    background-color: #f2a365; /* Цвет при наведении */
+    background-color: #f2a365;
     transition: background-color 0.3s ease;
 }
 
 .active {
-    font-weight: bold; /* Выделяем активный пункт */
-    color: #553a03; /* Цвет активного пункта */
-    border-bottom: 2px solid #553a03; /* Подчеркнутый нижний бордюр */
+    font-weight: bold;
+    color: #553a03;
+    border-bottom: 2px solid #553a03;
 }
+.carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.carousel div {
+    margin: 0;
+    padding: 0;
+}
+.slick-slide {
+    margin: 0 !important; /* Убираем автоматические отступы */
+}
+.slick-track {
+    height: auto !important; /* Чтобы не росли */
+}
+
+
